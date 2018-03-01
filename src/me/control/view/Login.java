@@ -18,13 +18,13 @@ import javax.swing.JTextField;
 
 public class Login extends JFrame implements ActionListener, KeyListener {
 
-	private Container ct = getContentPane();
-	private JPanel jp1 = new JPanel();
-	private JLabel jl1 = new JLabel("¾ÆÀÌµð", JLabel.CENTER);
-	private JLabel jl2 = new JLabel("ÆÐ½º¿öµå", JLabel.CENTER);
+	private Container ctn = getContentPane();
+	private JPanel jpnl1 = new JPanel();
+	private JLabel jlb1 = new JLabel("¾ÆÀÌµð", JLabel.CENTER);
+	private JLabel jlb2 = new JLabel("ÆÐ½º¿öµå", JLabel.CENTER);
 	private JTextField jtf1 = new JTextField();
 	private JTextField jtf2 = new JTextField();
-	private JButton jbt = new JButton("·Î±×ÀÎ");
+	private JButton jbtn = new JButton("·Î±×ÀÎ");
 
 	public Login() {
 		setTitle("ÇÐ»ý°ü¸®ÇÁ·Î±×·¥");
@@ -33,21 +33,21 @@ public class Login extends JFrame implements ActionListener, KeyListener {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		jl1.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
-		jl2.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
-		jbt.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
+		jlb1.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
+		jlb2.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
+		jbtn.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 
-		ct.setLayout(new BorderLayout());
-		jp1.setLayout(new GridLayout(2, 2));
-		jp1.add(jl1);
-		jp1.add(jtf1);
-		jp1.add(jl2);
-		jp1.add(jtf2);
-		ct.add(jp1, BorderLayout.CENTER);
-		ct.add(jbt, BorderLayout.SOUTH);
+		ctn.setLayout(new BorderLayout());
+		jpnl1.setLayout(new GridLayout(2, 2));
+		jpnl1.add(jlb1);
+		jpnl1.add(jtf1);
+		jpnl1.add(jlb2);
+		jpnl1.add(jtf2);
+		ctn.add(jpnl1, BorderLayout.CENTER);
+		ctn.add(jbtn, BorderLayout.SOUTH);
 
-		jbt.addActionListener(this);
-		jbt.addKeyListener(this);
+		jbtn.addActionListener(this);
+		jbtn.addKeyListener(this);
 		jtf1.addKeyListener(this);
 		jtf2.addKeyListener(this);
 	}
@@ -56,7 +56,7 @@ public class Login extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformed(ActionEvent e) {
 		String getId = jtf1.getText();
 		String getPw = jtf2.getText();
-		if (e.getSource() == jbt) {
+		if (e.getSource() == jbtn) {
 			if ((getId.equals("admin")) && (getPw.equals("admin"))) {
 				JOptionPane.showMessageDialog(null, "·Î±×ÀÎ¼º°ø");
 				jtf1.setText("");
